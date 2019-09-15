@@ -31,5 +31,6 @@ b. Output - Print all the paths which ends with the searchstring
 
 
 Important Notes  :
-Always Add "/" at starting and ending of the path.
-Don't add "/" for the check_existence function
+Always Add "/" at starting and ending of the path. |
+Don't add "/" for the check_existence function |
+Root Directory is already Created | Don't add root.
