@@ -1,5 +1,6 @@
-directory = []
-files = []
+directory = ["/"]
+files = ["/"]
+#function to create a directory
 def create_directory(path):
 	direc = path.rsplit("/",2)
 	if len(direc) == 3:
@@ -16,7 +17,7 @@ def create_directory(path):
 			print("(\"Directory Created\",True)")
 		else:
 			print("(\"No such file or Directory\",False)")
-
+#function to  create a file
 def create_file(path):
 	direc = path.rsplit("/",2)
 	if len(direc) == 3:
@@ -34,6 +35,7 @@ def create_file(path):
 		else:
 			print("(\"No such file or Directory\",False)")
 
+#function to check the existence of a path
 def check_existence(dir_name):
 	for i in directory:
 		direc = i.rsplit("/",2)
@@ -44,6 +46,8 @@ def check_existence(dir_name):
 		if direc[len(direc)-2] == dir_name :
 			print("True")
 	print("False")
+
+#funtion to list all directories in a path
 def list(path):
 	if(path =="/"):
 		for i in directory:
@@ -51,7 +55,10 @@ def list(path):
 	for i in directory:
 		print((i.rsplit(path,1))[1].split("/")[0])
 
+#function to search a file in a given path
 def search(path,sstr):
+	if path not in directory:
+		print("(\"No such file or Directory\",False)")
 	for i in directory:
 		if( i.endswith(sstr+"/") and i.startswith(path)):
 			print(i)
@@ -59,6 +66,8 @@ def search(path,sstr):
 		if( i.endswith(sstr+"/") and i.startswith(path)):
 			print(i)
 
+			
+#to take input from the user
 while 1:
 	command = input()
 	exec("command")
